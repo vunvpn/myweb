@@ -1,0 +1,234 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body{
+	font-family: monospace;
+	font-size: 16px;
+	min-height: 100vh;
+	width: 100%;
+	background: linear-gradient(to right bottom, #8cbef5, #e05cd5);
+}
+/*Làm menu cho header*/
+#header{
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+}
+.logo{
+	margin-left: 15%;
+}
+.logo img{
+	height: 60px;
+	width: 60px;
+}
+.header_menu{
+	margin-right: 10%;
+}
+.header_menu ul{
+	font-size: 1.1em;
+}
+.header_menu ul > li{
+	float: left;
+}
+.header_menu ul > li > a{
+	letter-spacing: 0.05em;
+	padding: 15px 20px;
+	display: block;
+	cursor: pointer;
+	font-weight: 600;
+	transition: ease-in-out .5s;
+	position: relative;
+	overflow: hidden;
+}
+.header_menu ul > li > a::before{
+	position: absolute;
+	content: '';
+	height: 8%;
+	top: 92%;
+	left: -100%;
+	width: 80%;
+	background: #45f3ff;
+	transition: ease-in-out .5s;
+}
+.header_menu ul > li > a:hover{
+	color: #45f3ff;
+}
+.header_menu ul > li > a:hover::before{
+	left: 10%;
+}
+
+/*Làm hình nền back ground*/
+.container{
+	background: transparent;
+	/*height: 100vh;
+	width: 100%;
+	background: linear-gradient(to right bottom, #8cbef5, #e05cd5);*/
+}
+
+
+.container::before{
+	content: '';
+	position: absolute;
+	height: 600px;
+	width: 600px;
+	background: #913ef7;
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+	border-top-right-radius: 50%;
+	top: 100%;
+	left: 100%;
+	transform: translate(-100%,-100%);
+	z-index: -1;
+	filter: blur(12px);
+}
+.container::after{
+	content: '';
+	position: absolute;
+	background: #87a1ed;
+	width: 300px;
+	height: 300px;
+	border-radius: 50%;
+	top: 10%;
+	left: 10%;
+	filter: blur(5px);
+	z-index: -1;
+
+	animation: rota 6s linear infinite;
+}
+
+@keyframes rota{
+	0%{
+		transform: translateY(0px);
+	}
+	50%{
+		transform: translateY(30px);
+	}
+	100%{
+		transform: translateY(0px);
+	}
+}
+
+/*Làm phần giới thiệu bản thân*/
+.description{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+
+	top: 30%;
+	left: 0;
+	background: transparent;
+	color: #f0f0f0D5;
+
+
+	font-family: 'Open Sans', arial, sans-serif;
+	letter-spacing: 0.08em;
+}
+.description h2{
+	font-size: 2.8em;
+	margin-bottom: 32px;
+	color: #ffffffAA;
+	transition: .4s;
+}
+.description h2:hover{
+	color: #fff;
+}
+
+.description h3{
+	font-size: 1.3em;
+	text-align: center;
+	font-weight: 400;
+	color: #006317;
+}
+.description h3:hover{
+	text-decoration: underline;
+}
+
+
+.description .page_button{
+	position: relative;
+}
+.description .page_button button{
+	margin-top: 50px;
+	width: 180px;
+	height: 50px;
+	border: none;
+	outline: none;
+	background: none;
+	font-family: monospace;
+	font-size: 16px;
+	letter-spacing: 0.04em;
+	transition: 0.4s;
+}
+.description .page_button i{
+	position: absolute;
+	height: 0;
+	width: 100%;
+	background: #9b59b6;
+	margin-top: 50px;
+	left: 0;
+	z-index: -1;
+	border-radius: 40px;
+	transition: 0.4s;
+}
+.description .page_button button a{
+	display: block;
+	color: #000;
+	opacity: 0.7;
+	transition: 0.4s;
+	padding: 10px 0px;
+	font-weight: 600;
+}
+.description .page_button button:hover ~ i{
+	height: 50px;
+	box-shadow: 0 0 40px #bb9fbf,
+				0 0 80px #bb9fbf;
+}
+.description .page_button a:hover{
+	color: #fff;
+	font-size: 1.15em;
+}
+
+/*Các link giới thiệu bản thân*/
+.infomation{
+	position:absolute;
+	width:80px;
+	height:180px;
+	right:0;
+	top:50%;
+	transform: translateY(-50%);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+
+	z-index: 2;
+
+}
+.infomation span{
+	font-size:25px;
+}
+.infomation a{
+	color:#002575;
+	display:block;
+	transition: .5s;
+}
+.infomation a:hover{
+	cursor: pointer;
+	color:#fff;
+}
